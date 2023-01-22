@@ -9,15 +9,6 @@
 
 body {
     font-family: "Rancho", cursive;
-    /* background: rgb(208, 255, 252);
-    background: linear-gradient(
-        270deg,
-        rgba(208, 255, 252, 1) 0%,
-        rgba(230, 252, 225, 1) 9%,
-        rgba(255, 221, 252, 1) 41%,
-        rgba(215, 254, 243, 1) 56%,
-        rgba(248, 230, 244, 1) 65%
-    ); */
     background: rgb(255, 234, 253);
     background: radial-gradient(
         circle,
@@ -40,11 +31,34 @@ h1 img {
 h2 {
     color: #f02579;
     font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+button {
+    width: fit-content;
+    background-color: #f02579;
+    border: none;
+    padding: 20px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d8216e;
 }
 
 section {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     height: 100vh;
 }
@@ -58,4 +72,32 @@ section input {
     width: 100%;
     display: flex;
     align-self: center;
+}
+
+section .inputBloc {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+section .cityWeather {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 100px;
+    flex-flow: row wrap;
+}
+
+section .cityWeather .category div {
+    color: #f02579;
+    font-size: 1.5rem;
+    background-color: #fad3f7;
+    border-radius: 50px;
+    padding: 5px 20px;
+    width: fit-content;
+    margin: auto;
+}
+
+input[type="search"] {
+    font-size: 18px;
 }

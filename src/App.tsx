@@ -34,19 +34,27 @@ function App() {
         }
     };
 
+    const handleKeyDown = (event: any) => {
+        if (event.key === "Enter") {
+            handleSubmit();
+        }
+    };
+
     return (
         <section>
             <h1>
                 Weather <img src="src/img/arc.png" />
             </h1>
-            <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                type="search"
-                placeholder="Rechercher une ville"
-            ></input>
-            <div>img</div>
-            <button onClick={handleSubmit}>OK</button>
+            <div className="inputBloc">
+                <input
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    type="search"
+                    placeholder="Rechercher une ville"
+                    onKeyDown={(e) => handleKeyDown(e)}
+                />
+                <button onClick={handleSubmit}>OK</button>
+            </div>
             {error && error}
             {data && <CityWeather data={data} />}
             {isLoading && "Chargement en cours"}
