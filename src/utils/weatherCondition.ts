@@ -1,21 +1,20 @@
 export default function weatherCondition(weather: String) {
     let weatherType;
-    console.log("w", weather);
     switch (weather) {
         case "Thunderstorm":
-            weatherType = "Orage";
+            weatherType = "Orageux";
             break;
         case "Drizzle":
             weatherType = "Bruine";
             break;
         case "Rain":
-            weatherType = "Pluie";
+            weatherType = "Pluvieux";
             break;
         case "Snow":
-            weatherType = "Neige";
+            weatherType = "Neigeux";
             break;
         case "Mist" || "Smoke" || "Haze":
-            weatherType = "Brume";
+            weatherType = "Brumeux";
             break;
         case "Dust":
             weatherType = "Poussièreux";
@@ -39,7 +38,7 @@ export default function weatherCondition(weather: String) {
             weatherType = "Clair";
             break;
         case "Clouds":
-            weatherType = "Nuages";
+            weatherType = "Nuageux";
             break;
         default:
             break;

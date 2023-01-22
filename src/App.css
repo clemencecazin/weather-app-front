@@ -101,3 +101,9 @@ section .cityWeather .category div {
 input[type="search"] {
     font-size: 18px;
 }
+
+.error {
+    padding: 60px;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}

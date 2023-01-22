@@ -5,7 +5,6 @@ type CityWeatherProps = {
 };
 
 const CityWeather = ({ data }: CityWeatherProps) => {
-    console.log(data?.main?.feels_likes);
     return (
         <>
             <h2>{data.name}</h2>

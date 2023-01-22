@@ -9,8 +9,6 @@ function App() {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
-    console.log(search);
-
     const handleSubmit = async () => {
         try {
             setData("");
@@ -29,13 +27,14 @@ function App() {
 
             setIsLoading(false);
         } catch (error: any) {
-            console.log(error);
-            setError("Nous n'avons pas trouvé cette ville");
+            setError(
+                "Cette ville existe peut être ailleurs dans le multivers mais pas ici ! Sorry !"
+            );
         }
     };
 
     const handleKeyDown = (event: any) => {
-        if (event.key === "Enter") {
+        if (event.key === "Enter" && search.length >= 1) {
             handleSubmit();
         }
     };
@@ -53,9 +52,11 @@ function App() {
                     placeholder="Rechercher une ville"
                     onKeyDown={(e) => handleKeyDown(e)}
                 />
-                <button onClick={handleSubmit}>OK</button>
+                {search.length >= 1 && (
+                    <button onClick={handleSubmit}>OK</button>
+                )}
             </div>
-            {error && error}
+            {error && <div className="error">{error}</div>}
             {data && <CityWeather data={data} />}
             {isLoading && "Chargement en cours"}
         </section>
